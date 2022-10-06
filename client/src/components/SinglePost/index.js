@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_POST } from "../utils/queries";
+import { QUERY_POST } from "../../utils/queries";
 import { QUERY_COMMENTS } from "../../utils/queries";
 
 const comments = [
@@ -45,7 +45,7 @@ const SinglePost = (props) => {
     <div>
       <div className="card mb-3">
         <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
+          <span style={{ fontWeight: 700 }} className="text-black">
             {post.title}
           </span>{" "}
           by {post.username}

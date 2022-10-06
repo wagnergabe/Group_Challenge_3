@@ -14,6 +14,8 @@ import Nav from "./components/Nav";
 import PostList from "./pages/PostList";
 import PostForm from "./components/PostForm/PostForm";
 import Footer from "./components/footer";
+import SinglePost from "./components/SinglePost";
+import TripForm from "./components/TripForm";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -43,7 +45,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<PostList />} />
+              <Route path="/post/:id" element={<SinglePost />} />
               <Route path="/form" element={<PostForm />} />
+              <Route path="/tripform" element={<TripForm />} />
             </Routes>
           </div>
           <Footer />
