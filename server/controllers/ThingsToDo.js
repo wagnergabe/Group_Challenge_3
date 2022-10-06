@@ -5,15 +5,35 @@ const App = () => {
 
 
     const  ThingsToDo = () => {
-        fetch("https://api.opentripmap.com/0.1/en/places/geoname?name=cityName&country=us&apikey=5ae2e3f221c38a28845f05b6b28dd69575b483ead24be6a1f3db9410")
+        fetch("https://api.opentripmap.com/0.1/en/places/geoname?name=${cityName}&country=us&apikey=5ae2e3f221c38a28845f05b6b28dd69575b483ead24be6a1f3db9410")
             .then(response => {
-                return response.json()
+                response.json();
             })
-            .then(data => {
-                setUsers(data)
-            })
+            .then((data) => {
+                setUsers(data));
+            }
 
-    }
+            useEffect(() => {
+                fetchData();
+            },[])
+            
+             // add a onclick button for users to create data 
+
+             // it should be able to display the info sent 
+            return (
+                <div className="App">
+                    <p>
+                        Find things to do.
+                    </p>
+                    <ul>
+                        {user && user.length > 0 && user.map((userObj, index) => (
+                            <li key={userObj.id}>{userObj.name}</li>
+                        ))}
+                    </ul>
+                </div>
+
+            );
+    
         
 }
 
