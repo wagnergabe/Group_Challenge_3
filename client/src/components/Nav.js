@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Auth from "../utils/auth";
 
 const Nav = () => {
   return (
@@ -10,7 +11,7 @@ const Nav = () => {
           </div>
         </Link>
 
-        <div class="w-full block flex justify-end flex-grow lg:flex lg:items-right lg:w-auto">
+        <div className="w-full block flex justify-end flex-grow lg:flex lg:items-right lg:w-auto">
           <div>
             <Link
               to="/tripform"
