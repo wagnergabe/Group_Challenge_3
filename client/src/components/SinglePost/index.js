@@ -29,15 +29,9 @@ const SinglePost = (props) => {
   const { loading: postQueryLoading, data: postData } = useQuery(QUERY_POST, {
     variables: { id: _id },
   });
-  const { loading: commentQueryLoading, data: commentData } = useQuery(
-    QUERY_COMMENTS,
-    {
-      variables: { post_id: _id },
-    }
-  );
   const post = postData?.post || {};
 
-  if (postQueryLoading || commentQueryLoading) {
+  if (postQueryLoading) {
     return <div>Loading...</div>;
   }
 
