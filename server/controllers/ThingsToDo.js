@@ -18,13 +18,10 @@ const App = () => {
             },[])
             
              // add a onclick button for users to create data 
-
              // it should be able to display the info sent 
             return (
                 <div className="App">
-                    <p>
-                        Find things to do.
-                    </p>
+                    <button onClick={ThingsToDo}>Things To Do</button>
                     <ul>
                         {user && user.length > 0 && user.map((userObj, index) => (
                             <li key={userObj.id}>{userObj.name}</li>
